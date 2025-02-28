@@ -102,10 +102,10 @@ def get_IC_number():
         search_icon.click()
         print("Search icon found. Clicked")
 
-        #first_ic_element = WebDriverWait(driver, 10).until(
-            #EC.presence_of_element_located((By.XPATH, "//span[contains(text(), 'IČ')]"))
-        #)
-        first_ic_element = locate_element(driver, "XPATH", "//span[contains(text(), 'IČ')]")
+        first_ic_element = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//span[contains(text(), 'IČ')]"))
+        )
+
         IC_number = first_ic_element.text.split(":")[1].strip()
         print(f"Retrieved IC number: {IC_number}")
         return IC_number
